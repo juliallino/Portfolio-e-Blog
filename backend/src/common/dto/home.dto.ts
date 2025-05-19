@@ -27,7 +27,18 @@ export class CreateHomeDto {
 
   @IsString()
   linkedin?: string;
-  
+
   @IsString()
   github?: string;
+
+  //portuguese
+  @IsString()
+  descricao: string;
+
+  @IsArray()
+  @IsString({ each: true })
+  soft_skills_pt: string[];
+
+  @IsString()
+  frase: string;
 }
