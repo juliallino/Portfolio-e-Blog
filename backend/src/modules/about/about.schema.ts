@@ -5,13 +5,21 @@ export type AboutDocument = About & Document;
 
 @Schema({ timestamps: true })
 export class About extends Document {
+  //portuguese
+  @Prop({ required: true })
+  descricao: string;
+
+  //english
   @Prop({ required: true })
   description: string;
-
-  @Prop({ type: [String], required: true, validate: {
-    validator: (images: string[]) => images.length <= 10,
-    message: 'The images array must contain up to 10 URLs.'
-  } })
+  
+  //both
+  @Prop({
+    type: [String], required: true, validate: {
+      validator: (images: string[]) => images.length <= 10,
+      message: 'The images array must contain up to 10 URLs.'
+    }
+  })
   images: string[];
 }
 

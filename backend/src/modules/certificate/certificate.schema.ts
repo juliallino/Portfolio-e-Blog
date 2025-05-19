@@ -5,6 +5,17 @@ export type CertificateDocument = Certificate & Document;
 
 @Schema()
 export class Certificate {
+    //portuguese
+     @Prop({ required: true })
+    titulo: string;
+    
+    @Prop({ required: true })
+    certificado_descicao: string;
+
+    @Prop({ required: true })
+    data: string;
+
+    //english
     @Prop({ required: true })
     title: string;
     
@@ -14,11 +25,12 @@ export class Certificate {
     @Prop({ required: true })
     date: string;
     
-    @Prop({ required: true })
-    platform: string;
-
+    //both
     @Prop({ required: true })
     workload:string
+    
+    @Prop({ required: true })
+    platform: string;
 
     @Prop({ required: true })
     link: string;

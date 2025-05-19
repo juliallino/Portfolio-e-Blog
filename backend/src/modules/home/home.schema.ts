@@ -5,17 +5,29 @@ export type HomeDocument = Home & Document;
 
 @Schema({ timestamps: true })
 export class Home {
-  @Prop({ required: true })
-  description: string;
+  //portuguese
+    @Prop({ required: true })
+  descricao: string;
 
   @Prop({ type: [String], required: true })
-  skills: string[];
+  soft_skills_pt: string[];
+
+  @Prop({ required: true })
+  frase: string;
+
+  //english
+  @Prop({ required: true })
+  description: string;
 
   @Prop({ type: [String], required: true })
   soft_skills: string[];
 
   @Prop({ required: true })
   phrase: string;
+
+  //both
+  @Prop({ type: [String], required: true })
+  skills: string[];
 
   @Prop({ required: true })
   photo: string;
